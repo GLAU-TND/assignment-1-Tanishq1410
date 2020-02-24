@@ -18,7 +18,7 @@ public class Menu {
     }
 
     public int showChoice() {
-        System.out.println("Welcome to Shri's Contact List App\n" +
+        System.out.println("Welcome to Tanishq's Contact List App\n" +
                 "Press 1 to add a new contact\n" +
                 "Press 2 to view all contacts\n" +
                 "Press 3 to search for a contact\n" +
@@ -78,62 +78,4 @@ public class Menu {
         linkedList.insert(node);
     }
 
-    private void sortList(MyLinkedList<Person> linkedList){
-        linkedList.sort();
-    }
-
-    public void viewChoice() {
-        sortList(linkedList);
-        while(true){
-            Node<Person> node = linkedList.getObject();
-            if(node==null)
-                break;
-            System.out.println(node.getData());
-        }
-    }
-
-    public void searchChoice() {
-        int counter = 0;
-        System.out.print("You could search for a contact from their first names: ");
-        scan.nextLine();
-        String name = scan.nextLine().trim();
-
-        while(true){
-            Node<Person> node = linkedList.getObject();
-            if(node==null)
-                break;
-            if (node.getData().getFirstName().compareTo(name) == 0)
-                counter++;
-        }
-
-        System.out.println(counter + " match found!");
-        while(true){
-            Node<Person> node = linkedList.getObject();
-            if(node==null)
-                break;
-            if (node.getData().getFirstName().compareTo(name) == 0)
-                System.out.println(node.getData());
-        }
-    }
-
-    public void deleteChoice() {
-        System.out.println("Here are all your contacts:");
-        int i=1;
-        while(true){
-            Node<Person> node = linkedList.getObject();
-            if(node==null)
-                break;
-            System.out.println(i+". "+node.getData().getFirstName()+" "+node.getData().getLastName());
-            i++;
-        }
-        System.out.print("Press the number against the contact to delete it: ");
-        int position = scan.nextInt();
-        Person  person=linkedList.delete(position).getData();
-
-        System.out.println(person.getFirstName() + " " + person.getLastName() + "'s contact deleted from list!");
-    }
-
-    public void exitChoice() {
-        System.out.println("Exiting");
-    }
 }
