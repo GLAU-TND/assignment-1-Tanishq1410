@@ -23,6 +23,7 @@ public class Node<T> {
     //Setter for self referential data
     public void setNext(Node<T> next) {
         this.next = next;
+
     }
 
     @Override
