@@ -23,7 +23,8 @@ public class Menu {
                 "Press 2 to view all contacts\n" +
                 "Press 3 to search for a contact\n" +
                 "Press 4 to delete a contact\n" +
-                "Press 5 to exit program");
+                "Press 5 to exit program\n"+
+                "Thanks for visiting us");
         return scan.nextInt();
     }
 
