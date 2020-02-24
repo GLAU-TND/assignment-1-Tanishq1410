@@ -68,43 +68,4 @@ public class MyLinkedList<T extends  Comparable<T>> {
         return deletedNode;
     }
 
-    //Helper method to check if linked list is empty or not
-    public boolean isEmpty() {
-        return head == null;
-    }
-
-    //Method to fetch object one by one
-    public Node<T> getObject() {
-
-        Node<T> temp;
-
-        if (getIter() == null && getHead() == null) {
-            System.out.println("List is empty");
-            return null;
-        } else if (getIter() == null) {
-            setIter(getHead());
-            return null;
-        }
-        temp = getIter();
-        setIter(getIter().getNext());
-        return temp;
-    }
-
-    //Method to sort linked list
-    public void sort(){
-        Node<T> pass1=getHead();
-        Node<T> pass2=getHead().getNext();
-
-        while(pass1!=null){
-            while(pass2!=null){
-                if(pass1.getData().compareTo(pass2.getData())>0){
-                    T temp = pass1.getData();
-                    pass1.setData(pass2.getData());
-                    pass2.setData(temp);
-                }
-                pass2=pass2.getNext();
-            }
-            pass1=pass1.getNext();
-        }
-    }
 }
