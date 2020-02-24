@@ -93,4 +93,48 @@ public class Menu {
         }
     }
 
+    public void searchChoice() {
+        int counter = 0;
+        System.out.print("You could search for a contact from their first names: ");
+        scan.nextLine();
+        String name = scan.nextLine().trim();
+
+        while(true){
+            Node<Person> node = linkedList.getObject();
+            if(node==null)
+                break;
+            if (node.getData().getFirstName().compareTo(name) == 0)
+                counter++;
+        }
+
+        System.out.println(counter + " match found!");
+        while(true){
+            Node<Person> node = linkedList.getObject();
+            if(node==null)
+                break;
+            if (node.getData().getFirstName().compareTo(name) == 0)
+                System.out.println(node.getData());
+        }
+    }
+
+    public void deleteChoice() {
+        System.out.println("Here are all your contacts:");
+        int i=1;
+        while(true){
+            Node<Person> node = linkedList.getObject();
+            if(node==null)
+                break;
+            System.out.println(i+". "+node.getData().getFirstName()+" "+node.getData().getLastName());
+            i++;
+        }
+        System.out.print("Press the number against the contact to delete it: ");
+        int position = scan.nextInt();
+        Person  person=linkedList.delete(position).getData();
+
+        System.out.println(person.getFirstName() + " " + person.getLastName() + "'s contact deleted from list!");
+    }
+
+    public void exitChoice() {
+        System.out.println("Exiting");
+    }
 }
