@@ -14,21 +14,4 @@ public class Node<T> {
     public void setData(T data) {
         this.data = data;
     }
-
-    //Getter for self referential data
-    public Node<T> getNext() {
-        return next;
-    }
-
-    //Setter for self referential data
-    public void setNext(Node<T> next) {
-        this.next = next;
-    }
-
-    @Override
-    public String toString() {
-        return "Node{" +
-                "data=" + data +
-                '}';
-    }
 }
